@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 .bg-landscape {
 	background: url("./landscape.jpg");
 	background-position: center;
@@ -74,6 +78,16 @@
 
 .command-menu {
     height: 100vh;
+	text-decoration: none;
+}
+
+.card-link {
+	text-decoration: none;
+    color: white;
+}
+
+.card-link:hover {
+	color: white;
 }
 
 .custom-card-container .custom-card {
@@ -81,14 +95,16 @@
     text-align: center;
     height: 300px;
     width: 250px;
-    color: white;
 	background: #01000C;
 	transition: 0.65s;
+	text-decoration: none;
+    color: white;
 }
 
 .custom-card-container .custom-card i {
     position: relative;
-    top: 25%;
+    top: 50%;
+	transform: translateY(-50%);
 	transition: 0.4s;
 }
 
@@ -112,5 +128,6 @@
 
 .custom-card-container .custom-card:hover i {
 	top: 18%;
+	transform: none;
 	transition: 0.3s;
 }
