@@ -10,14 +10,25 @@ html {
 	color: white;
 }
 
+.semi-footer {
+	background: url("./footer.jpg");
+	background-position: top;
+	background-size: cover;
+	color: white;
+}
+
+.semi-footer .server-icon {
+	border-radius: 50%;
+}
+
 .bg-glassthing {
-	padding: 1em;
+	padding: 0.5em;
 	border-radius: 15px;
 	background: rgba(0, 0, 0, 0.165);
 	box-shadow: inset 2px 2px 3px black, 2px 2px 3px rgba(0,0,0,0.57);
 }
 
-.bg-glassthing .btn-invite {
+.btn-invite {
 	background: transparent;
 	border: solid 1px white;
 	border-radius: 15px;
@@ -27,14 +38,14 @@ html {
 	transition: 0.4s;
 }
 
-.bg-glassthing .btn-invite:hover {
+.btn-invite:hover {
 	border: solid 1px transparent;
 	background: white;
 	transition: 0.4s;
 	color: black;
 }
 
-.bg-glassthing .btn-invite:active {
+.btn-invite:active {
 	transition: 0.4s;
 	box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.65);
 	border: solid 0.5px transparent;
@@ -77,7 +88,6 @@ html {
 }
 
 .command-menu {
-    height: 100vh;
 	text-decoration: none;
 }
 
@@ -93,7 +103,7 @@ html {
 .custom-card-container .custom-card {
     padding: 12px;
     text-align: center;
-    height: 300px;
+    height: 275px;
     width: 250px;
 	background: #01000C;
 	transition: 0.65s;
@@ -117,17 +127,25 @@ html {
 
 .custom-card-container .custom-card:hover {
     background: #1B1650;
+	box-shadow: inset -4px -4px 5px rgba(0,0,0, 0.65), inset 6px 6px 5px rgba(22, 11, 150, 0.7);
 	transition: 0.4s;
 }
 
 .custom-card-container .custom-card:hover .card-body {
 	opacity: 1;
-	top: 25%;
+	top: 20%;
 	transition: 0.45s;
 }
 
 .custom-card-container .custom-card:hover i {
-	top: 18%;
+	top: 15%;
 	transform: none;
 	transition: 0.3s;
+	text-shadow: 4px 4px 6px rgb(0,0,0);
+}
+
+footer {
+	background: black;
+	color: white;
+	padding: 1vh;
 }
