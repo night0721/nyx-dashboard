@@ -1,0 +1,116 @@
+.bg-landscape {
+	background: url("./landscape.jpg");
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	color: white;
+}
+
+.bg-glassthing {
+	padding: 1em;
+	border-radius: 15px;
+	background: rgba(0, 0, 0, 0.165);
+	box-shadow: inset 2px 2px 3px black, 2px 2px 3px rgba(0,0,0,0.57);
+}
+
+.bg-glassthing .btn-invite {
+	background: transparent;
+	border: solid 1px white;
+	border-radius: 15px;
+	padding: 10px 24px;
+	color: white;
+	text-decoration: none;
+	transition: 0.4s;
+}
+
+.bg-glassthing .btn-invite:hover {
+	border: solid 1px transparent;
+	background: white;
+	transition: 0.4s;
+	color: black;
+}
+
+.bg-glassthing .btn-invite:active {
+	transition: 0.4s;
+	box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.65);
+	border: solid 0.5px transparent;
+}
+
+#overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(35deg, rgb(0,0,0), rgb(7, 18, 70), rgb(103, 94, 129));
+	z-index: 999;
+    transition: 0.5s;
+}
+
+.loader {
+	width: 80px;
+	height: 80px;
+
+	border: 2px solid #f3f3f3;
+	border-top: 3px solid #f25a41;
+	border-radius: 100%;
+
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+	animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.command-menu {
+    height: 100vh;
+}
+
+.custom-card-container .custom-card {
+    padding: 12px;
+    text-align: center;
+    height: 300px;
+    width: 250px;
+    color: white;
+	background: #01000C;
+	transition: 0.65s;
+}
+
+.custom-card-container .custom-card i {
+    position: relative;
+    top: 25%;
+	transition: 0.4s;
+}
+
+.custom-card-container .custom-card .card-body {
+    position: relative;
+    top: 15%;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.custom-card-container .custom-card:hover {
+    background: #1B1650;
+	transition: 0.4s;
+}
+
+.custom-card-container .custom-card:hover .card-body {
+	opacity: 1;
+	top: 25%;
+	transition: 0.45s;
+}
+
+.custom-card-container .custom-card:hover i {
+	top: 18%;
+	transition: 0.3s;
+}
