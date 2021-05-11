@@ -149,3 +149,23 @@ footer {
 	color: white;
 	padding: 1vh;
 }
+
+#sidebar .nav-link {
+	color: #949494;
+	transition: 0.45s;
+}
+
+#sidebar .nav-link:hover,
+#sidebar .active {
+	color: #ffffff;
+	transition: 0.3s;
+}
+
+.code {
+	font-size: 12px;
+	font-family: 'Courier New', Courier, monospace;
+	padding: 4px 8px;
+	border-radius: 4px;
+	color: black;
+	background: rgba(255,255,255,0.65);
+}
