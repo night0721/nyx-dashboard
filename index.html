@@ -1,162 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>cath.exe</title>
-		<link rel="icon" href="https://cdn.discordapp.com/emojis/813410806724558909.png" type="image/x-icon" />
-		<link rel="stylesheet" href="style.css" />
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
-		<script src="https://kit.fontawesome.com/f1bbab48b6.js" crossorigin="anonymous"></script>
-	</head>
-	<body>
-		<div id="overlay">
-			<div class="loader"></div>
-		</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="og:title" content="cath.exe" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="cath.exe Official Website" />
+    <meta
+      property="og:image"
+      content="https://images-ext-2.discordapp.net/external/8SFc8ll22wV2_ZEd8roXwRLN3SDbaeDFuYLzEPaZWsQ/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/800966959268364288/e03d6149de8b410db26a6ed0b7c0b491.webp"
+    />
+    <meta property="og:url" content="https://cath.gq/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cath.exe</title>
+    <link
+      rel="icon"
+      href="https://cdn.discordapp.com/emojis/813410806724558909.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/f1bbab48b6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="overlay">
+      <div class="loader"></div>
+    </div>
 
-		<div class="bg-landscape">
-			<div class="bg-glassthing position-relative top-50 start-50 translate-middle w-75">
-				<h1 class="text-center mb-3">Welcome to cath.exe official website!</h1>
-				<div class="container">
-					<p class="text-center mb-4">
-						This bot can be fully customized for your server, with changeable prefix, unlimited custom commands to be created. Also, this bot has combined with simple giveaway system, so that you can simply connect it with other economy bots to work on. With the
-						moderation system, control the server becomes more easy. With disable and enable system, you can also prevent spamming with bot commands at your main chat or other channels!
-					</p>
-					<center>
-						<div class="d-flex flex-wrap d-sm-block">
-							<a class="btn-invite mb-2 mb-lg-0 mx-sm-0 mx-auto" target="_blank" href="https://discord.com/api/oauth2/authorize?client_id=800966959268364288&permissions=4231314550&scope=bot"><i class="fab fa-discord me-1"></i> Add to Server</a>
-							<a class="btn-invite mx-sm-0 mx-auto" href="#usage">Learn More</a>
-						</div>
-					</center>
-					<br />
-				</div>
-			</div>
-		</div>
+    <div class="bg-landscape">
+      <div
+        class="
+          bg-glassthing
+          position-relative
+          top-50
+          start-50
+          translate-middle
+          w-75
+        "
+      >
+        <h1 class="text-center mb-3">Welcome to cath.exe official website!</h1>
+        <div class="container">
+          <p class="text-center mb-4">
+            This bot can be fully customized for your server, with changeable
+            prefix, unlimited custom commands to be created. Also, this bot has
+            combined with simple giveaway system, so that you can simply connect
+            it with other economy bots to work on. With the moderation system,
+            control the server becomes more easy. With disable and enable
+            system, you can also prevent spamming with bot commands at your main
+            chat or other channels!
+          </p>
+          <center>
+            <div class="d-flex flex-wrap d-sm-block">
+              <a
+                class="btn-invite mb-2 mb-lg-0 mx-sm-0 mx-auto"
+                target="_blank"
+                href="https://discord.com/api/oauth2/authorize?client_id=800966959268364288&permissions=4231314550&scope=bot"
+                ><i class="fab fa-discord me-1"></i> Add to Server</a
+              >
+              <a class="btn-invite mx-sm-0 mx-auto" href="#usage">Learn More</a>
+            </div>
+          </center>
+          <br />
+        </div>
+      </div>
+    </div>
 
-		<span id="usage"></span>
-		<div class="command-menu">
-			<div class="container mt-4">
-				<h2 class="text-center my-4 mb-4">The usage of cath.exe</h2>
-				<div class="d-flex justify-content-center flex-wrap mt-3 custom-card-container">
-					<div class="custom-card">
-						<a class="card-link" href="commands.html#codm">
-							<i class="fas fa-gamepad fa-5x"></i>
-							<div class="card-body">
-								<h3>CODM</h3>
-								<p>Commands about CODM items</p>
-							</div>
-						</a>
-					</div>
-					<div class="custom-card">
-						<a class="card-link" href="commands.html#config">
-							<i class="fas fa-cog fa-5x"></i>
-							<div class="card-body">
-								<h3>Config</h3>
-								<p>Commands about Bot Configuration</p>
-							</div>
-						</a>
-					</div>
-					<div class="custom-card">
-						<a class="card-link" href="commands.html#economy">
-							<i class="far fa-money-bill-alt fa-5x"></i>
-							<div class="card-body">
-								<h3>Economy</h3>
-								<p>Commands about Economy feature</p>
-							</div>
-						</a>
-					</div>
-					<div class="custom-card">
-						<a class="card-link" href="commands.html#fun">
-							<i class="fas fa-grin-tears fa-5x"></i>
-							<div class="card-body">
-								<h3>Fun</h3>
-								<p>Commands about Fun things</p>
-							</div>
-						</a>
-					</div>
-					<div class="custom-card">
-						<a class="card-link" href="commands.html#giveaway">
-							<i class="fas fa-gift fa-5x"></i>
-							<div class="card-body">
-								<h3>Giveaway</h3>
-								<p>Commands about making Giveaway</p>
-							</div>
-						</a>
-					</div>
-					<div class="custom-card">
-						<a class="card-link" href="commands.html#moderation">
-							<i class="fas fa-users-cog fa-5x"></i>
-							<div class="card-body">
-								<h3>Moderation</h3>
-								<p>Commands about Server Moderation</p>
-							</div>
-						</a>
-					</div>
-					<div class="custom-card">
-						<a class="card-link" href="commands.html#music">
-							<i class="fas fa-music fa-5x"></i>
-							<div class="card-body">
-								<h3>Music</h3>
-								<p>Commands about Music</p>
-							</div>
-						</a>
-					</div>
-					<div class="custom-card">
-						<a class="card-link" href="commands.html#utilities">
-							<i class="fas fa-tools fa-5x"></i>
-							<div class="card-body">
-								<h3>Utilities</h3>
-								<p>Extra Commands you may need later</p>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
+    <span id="usage"></span>
+    <div class="command-menu">
+      <div class="container mt-4">
+        <h2 class="text-center my-4 mb-4">The usage of cath.exe</h2>
+        <div
+          class="
+            d-flex
+            justify-content-center
+            flex-wrap
+            mt-3
+            custom-card-container
+          "
+        >
+          <div class="custom-card">
+            <a class="card-link" href="commands.html#codm">
+              <i class="fas fa-gamepad fa-5x"></i>
+              <div class="card-body">
+                <h3>CODM</h3>
+                <p>Commands about CODM items</p>
+              </div>
+            </a>
+          </div>
+          <div class="custom-card">
+            <a class="card-link" href="commands.html#config">
+              <i class="fas fa-cog fa-5x"></i>
+              <div class="card-body">
+                <h3>Config</h3>
+                <p>Commands about Bot Configuration</p>
+              </div>
+            </a>
+          </div>
+          <div class="custom-card">
+            <a class="card-link" href="commands.html#economy">
+              <i class="far fa-money-bill-alt fa-5x"></i>
+              <div class="card-body">
+                <h3>Economy</h3>
+                <p>Commands about Economy feature</p>
+              </div>
+            </a>
+          </div>
+          <div class="custom-card">
+            <a class="card-link" href="commands.html#fun">
+              <i class="fas fa-grin-tears fa-5x"></i>
+              <div class="card-body">
+                <h3>Fun</h3>
+                <p>Commands about Fun things</p>
+              </div>
+            </a>
+          </div>
+          <div class="custom-card">
+            <a class="card-link" href="commands.html#giveaway">
+              <i class="fas fa-gift fa-5x"></i>
+              <div class="card-body">
+                <h3>Giveaway</h3>
+                <p>Commands about making Giveaway</p>
+              </div>
+            </a>
+          </div>
+          <div class="custom-card">
+            <a class="card-link" href="commands.html#moderation">
+              <i class="fas fa-users-cog fa-5x"></i>
+              <div class="card-body">
+                <h3>Moderation</h3>
+                <p>Commands about Server Moderation</p>
+              </div>
+            </a>
+          </div>
+          <div class="custom-card">
+            <a class="card-link" href="commands.html#music">
+              <i class="fas fa-music fa-5x"></i>
+              <div class="card-body">
+                <h3>Music</h3>
+                <p>Commands about Music</p>
+              </div>
+            </a>
+          </div>
+          <div class="custom-card">
+            <a class="card-link" href="commands.html#utilities">
+              <i class="fas fa-tools fa-5x"></i>
+              <div class="card-body">
+                <h3>Utilities</h3>
+                <p>Extra Commands you may need later</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<br />
-		<div class="semi-footer overflow-hidden py-3">
-			<div class="row">
-				<div class="col-lg-5 d-flex">
-					<img class="img img-responsive m-auto server-icon" src="https://cdn.discordapp.com/icons/718762019586572341/c35c387563c7527f056276f2a16f526b.webp?size=2048" />
-				</div>
-				<div class="col-lg d-flex">
-					<div class="my-auto mx-auto mx-lg-0 w-75 px-2 px-lg-0 text-center text-lg-start">
-						<h2>Need technical support?</h2>
-						<p>Join Ń1ght and Cath Nation Discord Server to get some help straight from cath.exe developer and have some programming related chit-chat with other programmers from around the world. Invitation link right below.</p>
-						<br />
-						<center><a class="btn-invite" target="_blank" href="https://discord.gg/ER8JX997Wd">Ń1ght and Cath Nation</a></center>
-					</div>
-				</div>
-			</div>
-		</div>
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg text-center text-md-start">
-						<small>Cath.exe&copy;2021</small>
-					</div>
-					<div class="col-lg text-center text-md-end">
-						<small>Made by Ń1ght#0001</small>
-					</div>
-				</div>
-			</div>
-		</footer>
+    <br />
+    <div class="semi-footer overflow-hidden py-3">
+      <div class="row">
+        <div class="col-lg-5 d-flex">
+          <img
+            class="img img-responsive m-auto server-icon"
+            src="https://cdn.discordapp.com/icons/718762019586572341/c35c387563c7527f056276f2a16f526b.webp?size=2048"
+          />
+        </div>
+        <div class="col-lg d-flex">
+          <div
+            class="
+              my-auto
+              mx-auto mx-lg-0
+              w-75
+              px-2 px-lg-0
+              text-center text-lg-start
+            "
+          >
+            <h2>Need technical support?</h2>
+            <p>
+              Join Ń1ght and Cath Nation Discord Server to get some help
+              straight from cath.exe developer and have some programming related
+              chit-chat with other programmers from around the world. Invitation
+              link right below.
+            </p>
+            <br />
+            <center>
+              <a
+                class="btn-invite"
+                target="_blank"
+                href="https://discord.gg/ER8JX997Wd"
+                >Ń1ght and Cath Nation</a
+              >
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg text-center text-md-start">
+            <small>Cath.exe&copy;2021</small>
+          </div>
+          <div class="col-lg text-center text-md-end">
+            <small>Made by Ń1ght#0001</small>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-		<script>
-			var overlay = document.getElementById("overlay");
+    <script>
+      var overlay = document.getElementById("overlay");
 
-			window.addEventListener("load", function () {
-				setTimeout(() => {
-					overlay.style.opacity = "0";
-					setTimeout(() => {
-						overlay.style.display = "none";
-					}, 1000);
-				}, 1000);
-			});
-		</script>
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          overlay.style.opacity = "0";
+          setTimeout(() => {
+            overlay.style.display = "none";
+          }, 1000);
+        }, 1000);
+      });
+    </script>
 
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-	</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
