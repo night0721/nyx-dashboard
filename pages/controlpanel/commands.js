@@ -25,7 +25,7 @@ const rows = [
     createData('Command', 'Description', true),
 ];
 
-function commands() {
+function Commands() {
     const classes = useStyles();
 
     return (
@@ -54,4 +54,4 @@ function commands() {
     );
 }
 
-export default commands
+export default Commands
