@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Link from 'next/link'
 
 const useStyles = makeStyles({
     root: {
@@ -27,18 +28,20 @@ export default function CardContainer(props) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root} style={{ background: '#1F1B24' }}>
-            <CardContent>
-                <Typography variant="h5" component="h2">
-                    {props.title}
-                </Typography>
-                <Typography variant="body2" component="p">
-                    {props.children}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-        </Card>
+        <a href={props.link}>
+            <Card className={classes.root} style={{ background: '#1F1B24' }}>
+                <CardContent>
+                    <Typography variant="h5" component="h2">
+                        {props.title}
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                        {props.children}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button size="small">Learn More</Button>
+                </CardActions>
+            </Card>
+        </a>
     );
 }

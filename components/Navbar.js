@@ -35,7 +35,7 @@ export default function ButtonAppBar() {
                         Cath.exe
                     </Typography>
                     <Button color="inherit">Stats</Button>
-                    <Button color="inherit">Control Panel</Button>
+                    <a href='/controlpanel'><Button color="inherit">Control Panel</Button></a>
                 </Toolbar>
             </AppBar>
         </div>
