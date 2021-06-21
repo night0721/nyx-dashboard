@@ -3,5 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/controlpanel": "pages/controlpanel.js"
+  "/controlpanel/commands": "pages/controlpanel/commands.js",
+  "/controlpanel": "pages/controlpanel.js",
+  "/404": "pages/404.js"
 }
