@@ -10,7 +10,7 @@ export default function Home() {
   
   <>
     {!session && <>
-      <h1>Seems like you're not logged in. Log in to get started!</h1>
+      <h1>Seems like you&apos;re not logged in. Log in to get started!</h1>
     </>
   }
   {session && <>
@@ -26,25 +26,4 @@ export default function Home() {
   }
   </>
   )
-
-  if (!session) {
-    return (
-      <>
-        <h1>Welcome User!</h1>
-        <div className='grid'>
-          <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-          <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-          <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-          <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-          <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-        </div>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <h1>Seems like you're not logged in. Log in to get started!</h1>
-      </>
-    )
-  }
 }
