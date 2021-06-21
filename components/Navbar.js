@@ -33,7 +33,9 @@ export default function ButtonAppBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        Cath.exe
+                        <Link href='/'>
+                            Cath.exe
+                        </Link>
                     </Typography>
                     <Button color="inherit">Stats</Button>
                     <Link href='/controlpanel'><Button color="inherit">Control Panel</Button></Link>

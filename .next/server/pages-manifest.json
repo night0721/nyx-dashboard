@@ -1,10 +1,7 @@
 {
-  "/404": "pages/404.html",
   "/_app": "pages/_app.js",
-  "/api/hello": "pages/api/hello.js",
-  "/controlpanel/commands": "pages/controlpanel/commands.html",
-  "/controlpanel": "pages/controlpanel.html",
-  "/": "pages/index.html",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/controlpanel": "pages/controlpanel.js"
 }
