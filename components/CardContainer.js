@@ -29,7 +29,7 @@ export default function CardContainer(props) {
 
     return (
         <a href={props.link}>
-            <Card className={classes.root} style={{ background: '#1F1B24' }}>
+            <Card className={classes.root} style={{ background: '#1F1B24', border: '2px solid #00c7b6' }}>
                 <CardContent>
                     <Typography variant="h5" component="h2">
                         {props.title}
