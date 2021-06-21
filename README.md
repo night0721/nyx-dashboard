@@ -29,6 +29,15 @@ Install dependencies
   yarn install
 ```
 
+Configure environment variables
+
+.env example
+```
+  DISCORD_ID=
+  DISCORD_SECRET=
+  DATABASE_URL=
+```
+
 Start the server
 
 ```bash
