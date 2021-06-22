@@ -3,7 +3,7 @@ import CardContainer from '../../components/CardContainer'
 import Head from 'next/head'
 import { useSession } from 'next-auth/client'
 
-function index() {
+function Index() {
 
     const [session, loading] = useSession()
 
@@ -27,4 +27,4 @@ function index() {
     )
 }
 
-export default index
+export default Index
