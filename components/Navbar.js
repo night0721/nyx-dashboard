@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Link from 'next/link'
 import AuthButton from './AuthButton'
+import { useSession } from 'next-auth/client'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ButtonAppBar() {
+    const [session, loading] = useSession()
     const classes = useStyles();
 
     return (
@@ -38,9 +40,9 @@ export default function ButtonAppBar() {
                             Cath.exe
                         </Link>
                     </Typography>
-                    <Button color="inherit">Stats</Button>
+                    {session && <Button color="inherit">Stats</Button>}
                     <AuthButton/>
-                    <Link href='/controlpanel'><Button color="inherit">Control Panel</Button></Link>
+                    {session && <Link href='/controlpanel'><Button color="inherit">Control Panel</Button></Link>}
                 </Toolbar>
             </AppBar>
         </div>

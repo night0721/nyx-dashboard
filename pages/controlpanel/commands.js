@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Head from 'next/head'
+import { useSession } from 'next-auth/client'
 
 const useStyles = makeStyles({
     table: {
@@ -27,35 +28,43 @@ const rows = [
 ];
 
 function Commands() {
+    const [session, loading] = useSession()
     const classes = useStyles();
 
     return (
         <>
-            <Head>
-                <title>Cath Commands</title>
-            </Head>
-            <TableContainer component={Paper} style={{ background: '#1F1B24' }}>
-                <Table className={classes.table} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell style={{ color: '#fff' }}>Commands</TableCell>
-                            <TableCell align="right" style={{ color: '#fff' }}>Description</TableCell>
-                            <TableCell align="right" style={{ color: '#fff' }}>Status</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row" style={{ color: '#fff' }}>
-                                    {row.name}
-                                </TableCell>
-                                <TableCell align="right" style={{ color: '#fff' }}>{row.description}</TableCell>
-                                <TableCell align="right" style={{ color: '#fff' }}>{row.status ? 'Online' : 'Offline'}</TableCell>
+            {session &&
+            <>
+                <Head>
+                    <title>Cath Commands</title>
+                </Head>
+                <TableContainer component={Paper} style={{ background: '#1F1B24' }}>
+                    <Table className={classes.table} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell style={{ color: '#fff' }}>Commands</TableCell>
+                                <TableCell align="right" style={{ color: '#fff' }}>Description</TableCell>
+                                <TableCell align="right" style={{ color: '#fff' }}>Status</TableCell>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                        </TableHead>
+                        <TableBody>
+                            {rows.map((row) => (
+                                <TableRow key={row.name}>
+                                    <TableCell component="th" scope="row" style={{ color: '#fff' }}>
+                                        {row.name}
+                                    </TableCell>
+                                    <TableCell align="right" style={{ color: '#fff' }}>{row.description}</TableCell>
+                                    <TableCell align="right" style={{ color: '#fff' }}>{row.status ? 'Online' : 'Offline'}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </>
+            } {!session && <>
+                <h1>Seems like you&apos;re not logged in. Log in to get started!</h1>
+            </>
+            }
         </>
     );
 }
