@@ -1,5 +1,6 @@
 import { Typography } from '@material-ui/core'
 import CardContainer from '../components/CardContainer'
+import Card from '../components/Card'
 import { useSession } from 'next-auth/client'
 
 export default function Home() {
@@ -16,11 +17,12 @@ export default function Home() {
   {session && <>
       <h1>Welcome {session.user.name}!</h1>
       <div className='grid'>
-        <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-        <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-        <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-        <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
-        <CardContainer title='Commands' link='/controlpanel/commands'>Command controls</CardContainer>
+        <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
+        <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
+        <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
+        <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
+        <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
+        <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
       </div>
     </>
   }

@@ -1,5 +1,5 @@
 import React from 'react'
-import CardContainer from '../../components/CardContainer'
+import Card from '../../components/Card'
 import Head from 'next/head'
 import { useSession } from 'next-auth/client'
 
@@ -19,7 +19,9 @@ function Index() {
                 </Head>
                 <div>
                     <h1>Control Panel</h1>
-                    <CardContainer link='/controlpanel/commands'>Commands</CardContainer>
+                    <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>
+                    <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>
+                    <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>
                 </div>
             </>
             }
