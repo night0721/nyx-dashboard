@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const useStyles = makeStyles({
     homeCard: {
-        width: '350px',
+        width: '300px',
         height: '150px',
         background: '#1f1b24',
         margin: '10px',
