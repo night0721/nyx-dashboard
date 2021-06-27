@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import Navbar from '../components/Navbar'
 import Head from 'next/head'
 import { Provider } from 'next-auth/client'
 import { ChakraProvider } from "@chakra-ui/react"
