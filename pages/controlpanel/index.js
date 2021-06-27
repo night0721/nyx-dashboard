@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../../components/Card'
 import Head from 'next/head'
 import { useSession } from 'next-auth/client'
+import { Text } from "@chakra-ui/react"
 
 function Index() {
 
@@ -18,7 +19,7 @@ function Index() {
                     <title>Cath Control Panel</title>
                 </Head>
                 <div>
-                    <h1>Control Panel</h1>
+                    <Text fontSize='4xl'>Control Panel</Text>
                     <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>
                     <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>
                     <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>

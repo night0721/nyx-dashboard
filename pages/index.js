@@ -1,7 +1,6 @@
-import { Typography } from '@material-ui/core'
-import CardContainer from '../components/CardContainer'
 import Card from '../components/Card'
 import { useSession } from 'next-auth/client'
+import { Text } from "@chakra-ui/react"
 
 export default function Home() {
 
@@ -15,7 +14,7 @@ export default function Home() {
     </>
   }
   {session && <>
-      <h1>Welcome {session.user.name}!</h1>
+      <Text fontSize='4xl'>Welcome {session.user.name}!</Text>
       <div className='grid'>
         <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
         <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
