@@ -1,6 +1,7 @@
 import Card from '../components/Card'
 import { useSession } from 'next-auth/client'
 import { Text } from "@chakra-ui/react"
+import Hero from '../components/Hero/Hero'
 
 export default function Home() {
 
@@ -10,7 +11,7 @@ export default function Home() {
   
   <>
     {!session && <>
-      <h1>Seems like you&apos;re not logged in. Log in to get started!</h1>
+      <Hero title='Cath.exe' subtitle='Your favorite CODM bot. Cath.exe is packed to the brim with commands for moderation, stats and of course, CODM.' ctaText='Sign In' image='/logo.png'/>
     </>
   }
   {session && <>
