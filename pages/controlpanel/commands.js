@@ -1,35 +1,50 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import {
+    Table,
+    Thead,
+    Tbody,
+    Tr,
+    Th,
+    Td,
+    TableCaption,
+    Switch
+} from "@chakra-ui/react"
 import Head from 'next/head'
 import { useSession } from 'next-auth/client'
 
-const useStyles = makeStyles({
-    table: {
-        minWidth: 650,
-    },
-});
 
-function createData(name, description, status) {
-    return { name, description, status };
+function Controller({initialState}) {
+    const [online, setOnline] = React.useState(initialState)
+
+    React.useEffect(()=>{
+        // fake post req
+        console.log(online)
+    }, [online])
+
+    return (
+        <Switch
+            size="lg"
+            colorScheme={'teal'}
+            isChecked={online}
+            value={online}
+            onChange={() => { setOnline(!online) }}
+        />
+    )
 }
-
-const rows = [
-    createData('Command', 'Description', true),
-    createData('Command', 'Description', true),
-    createData('Command', 'Description', true),
-    createData('Command', 'Description', true),
-];
 
 function Commands() {
     const [session, loading] = useSession()
-    const classes = useStyles();
+
+
+    const [commands, setCommands] = React.useState(
+        [
+            {command: 'Help', online: true},
+            {command: 'Help', online: true},
+            {command: 'Help', online: true},
+            {command: 'Help', online: true},
+        ]
+    )
+
 
     return (
         <>
@@ -38,28 +53,26 @@ function Commands() {
                 <Head>
                     <title>Cath Commands</title>
                 </Head>
-                <TableContainer component={Paper} style={{ background: '#1F1B24' }}>
-                    <Table className={classes.table} aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell style={{ color: '#fff' }}>Commands</TableCell>
-                                <TableCell align="right" style={{ color: '#fff' }}>Description</TableCell>
-                                <TableCell align="right" style={{ color: '#fff' }}>Status</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {rows.map((row) => (
-                                <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row" style={{ color: '#fff' }}>
-                                        {row.name}
-                                    </TableCell>
-                                    <TableCell align="right" style={{ color: '#fff' }}>{row.description}</TableCell>
-                                    <TableCell align="right" style={{ color: '#fff' }}>{row.status ? 'Online' : 'Offline'}</TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                <Table variant="simple">
+                    <TableCaption>Command Controls</TableCaption>
+                    <Thead>
+                        <Tr>
+                            <Th>Command</Th>
+                            <Th>Enabled</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {commands.map((command, idx)=>(
+                            <Tr key={idx}>
+                                <Td>{command.command}</Td>
+                                <Td>
+                                    <Controller initialState={command.online}/>
+                                </Td>
+                            </Tr>
+                        ))}
+                        
+                    </Tbody>
+                </Table>
             </>
             } {!session && <>
                 <h1>Seems like you&apos;re not logged in. Log in to get started!</h1>
