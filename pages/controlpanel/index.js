@@ -2,14 +2,15 @@ import React from 'react'
 import Card from '../../components/Card'
 import Head from 'next/head'
 import { useSession } from 'next-auth/client'
-import { Text } from "@chakra-ui/react"
+import { Flex, Text, Spacer } from "@chakra-ui/react"
+
 
 function Index() {
 
     const [session, loading] = useSession()
 
     return (
-        <>
+        <>  
             {!session && <>
                 <h1>Seems like you&apos;re not logged in. Log in to get started!</h1>
             </>
@@ -19,10 +20,14 @@ function Index() {
                     <title>Cath Control Panel</title>
                 </Head>
                 <div>
-                    <Text fontSize='4xl'>Control Panel</Text>
-                    <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>
-                    <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>
-                    <Card title='Commands' desc='Control your commands and their settings.' link='/controlpanel/commands'/>
+                    <Text fontSize='4xl' marginBottom='15'>Control Panel</Text>
+                    <Flex direction='column'>
+                        <Card title='Commands' desc='Control your commands' link='/controlpanel/commands'/>
+                        <Spacer/>
+                        <Card title='Commands' desc='Control your commands' link='/controlpanel/commands'/>
+                        <Spacer/>
+                        <Card title='Commands' desc='Control your commands' link='/controlpanel/commands'/>
+                    </Flex>
                 </div>
             </>
             }

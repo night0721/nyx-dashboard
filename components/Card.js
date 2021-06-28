@@ -1,38 +1,17 @@
-import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import Link from 'next/link'
+import {Text, Flex, Button} from '@chakra-ui/react'
 
-const useStyles = makeStyles({
-    homeCard: {
-        width: '300px',
-        height: '150px',
-        background: '#1f1b24',
-        margin: '10px',
-        padding: '20px',
-        borderRadius: '15px',
-
-        '&:hover': {
-            background: '#2c2633',
-        }
-    },
-    title: {
-        marginTop: '3px',
-    },
-    desc: {}
-})
-
-function HomeCard({title, desc, link=''}) {
-
-    const classes = useStyles()
-
+function Card({title, desc, link}) {
     return (
         <Link href={link}>
-            <div className={classes.homeCard}>
-                <h1 className={classes.title}>{title}</h1>
-                <p className={classes.desc}>{desc}</p>
-            </div>
+            <Flex direction='column' background='gray.900' width={300} height={150} p='5' borderRadius='15px'>
+                <Text fontSize='2xl'>{title}</Text>
+                <Text fontSize='lg' style={{ marginBottom: '10px' }}>{desc}</Text>
+                <Button colorScheme='teal' variant='outline'>Learn More</Button>
+            </Flex>
         </Link>
     )
 }
 
-export default HomeCard
+export default Card
