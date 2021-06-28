@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
       <ChakraProvider>
         <Head>
           <title>Cath Dashboard</title>
+          <link rel="icon" href="/logo.png" type="image/png"/>
         </Head>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Header/>
