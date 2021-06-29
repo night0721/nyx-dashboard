@@ -22,9 +22,11 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 import AuthButton from '../AuthButton'
+import { signIn, signOut, useSession } from 'next-auth/client';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const [session, loading] = useSession()
 
   return (
     <Box>
@@ -69,14 +71,13 @@ export default function WithSubnavigation() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <AuthButton/>
           <Button
             as={'a'}
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'https://github.com/night0721/cath.gq'}>
-            Github
+            onClick={session ? ()=>{signOut()} : ()=>{signIn()}}>
+            {session ? 'Sign Out' : 'Sign In'}
           </Button>
         </Stack>
       </Flex>
