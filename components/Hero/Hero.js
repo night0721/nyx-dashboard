@@ -65,7 +65,6 @@ export default function Hero({
                         px="4"
                         lineHeight="1"
                         size="md"
-                        onClick={()=>{signIn()}}
                     >
                         {ctaText}
                     </Button>
