@@ -5,6 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react"
 import Header from '../components/Nav/Header'
 import theme from '../chakra_config/theme'
 import { ColorModeScript } from "@chakra-ui/react"
+import { Banner } from '../components/Banner/Banner'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Header/>
+        <Banner/>
         <div className='page-container'>
           <Component {...pageProps} />
         </div>
