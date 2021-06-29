@@ -7,19 +7,16 @@ import {
     Th,
     Td,
     TableCaption,
-    Switch
+    Switch,
+    Text
 } from "@chakra-ui/react"
 import Head from 'next/head'
 import { useSession } from 'next-auth/client'
+import axios from 'axios'
 
 
 function Controller({initialState}) {
     const [online, setOnline] = React.useState(initialState)
-
-    React.useEffect(()=>{
-        // fake post req
-        console.log(online)
-    }, [online])
 
     return (
         <Switch
@@ -36,7 +33,7 @@ function Commands() {
     const [session, loading] = useSession()
 
 
-    const [commands, setCommands] = React.useState(
+    const [categories, setCategories] = React.useState(
         [
             {command: 'Help', online: true},
             {command: 'Help', online: true},
@@ -44,6 +41,11 @@ function Commands() {
             {command: 'Help', online: true},
         ]
     )
+
+    React.useEffect(() => {
+        axios.get('https://cath.night0721.repl.co/api/commands')
+            .then(res => setCategories(res.data))
+    }, [])
 
 
     return (
@@ -62,15 +64,19 @@ function Commands() {
                         </Tr>
                     </Thead>
                     <Tbody>
-                        {commands.map((command, idx)=>(
-                            <Tr key={idx}>
-                                <Td>{command.command}</Td>
-                                <Td>
-                                    <Controller initialState={command.online}/>
-                                </Td>
-                            </Tr>
+                        {categories.map((category, idx) => (
+                            <>
+                                <Text fontSize='3xl'>{category.name}</Text>
+                                {category.commands.map((command, commandIdx)=> (
+                                    <Tr key={commandIdx}>
+                                        <Td>{command.name}</Td>
+                                        <Td>
+                                            <Controller initialState={command.online} />
+                                        </Td>
+                                    </Tr>
+                                ))}
+                            </>
                         ))}
-                        
                     </Tbody>
                 </Table>
             </>
