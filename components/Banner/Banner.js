@@ -15,7 +15,7 @@ export const Banner = () => (
         >
             <HStack spacing="3">
                 <Text fontWeight="medium" marginEnd="2">
-                    Cath's dashboard is still in testing phase. It is not stated to release soon.
+                    Cath&apos;s dashboard is still in testing phase. It is not stated to release soon.
                 </Text>
             </HStack>
             <BannerLink w={{ base: 'full', sm: 'auto' }} flexShrink={0}>
