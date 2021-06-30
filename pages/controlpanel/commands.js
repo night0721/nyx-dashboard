@@ -15,7 +15,7 @@ import { useSession } from 'next-auth/client'
 import axios from 'axios'
 
 
-function Controller({initialState}) {
+function Controller({ initialState }) {
     const [online, setOnline] = React.useState(initialState)
 
     return (
@@ -35,10 +35,10 @@ function Commands() {
 
     const [categories, setCategories] = React.useState(
         [
-            {command: 'Help', online: true},
-            {command: 'Help', online: true},
-            {command: 'Help', online: true},
-            {command: 'Help', online: true},
+            { command: 'Help', online: true },
+            { command: 'Help', online: true },
+            { command: 'Help', online: true },
+            { command: 'Help', online: true },
         ]
     )
 
@@ -51,35 +51,35 @@ function Commands() {
     return (
         <>
             {session &&
-            <>
-                <Head>
-                    <title>Cath Commands</title>
-                </Head>
-                <Table variant="simple">
-                    <TableCaption>Command Controls</TableCaption>
-                    <Thead>
-                        <Tr>
-                            <Th>Command</Th>
-                            <Th>Enabled</Th>
-                        </Tr>
-                    </Thead>
-                    <Tbody>
-                        {categories.map((category, idx) => (
-                            <>
-                                <Text fontSize='3xl'>{category.name}</Text>
-                                {category.commands.map((command, commandIdx)=> (
-                                    <Tr key={commandIdx}>
-                                        <Td>{command.name}</Td>
-                                        <Td>
-                                            <Controller initialState={command.online} />
-                                        </Td>
-                                    </Tr>
-                                ))}
-                            </>
-                        ))}
-                    </Tbody>
-                </Table>
-            </>
+                <>
+                    <Head>
+                        <title>Cath Commands</title>
+                    </Head>
+                    <Table variant="simple">
+                        <TableCaption>Command Controls</TableCaption>
+                        <Thead>
+                            <Tr>
+                                <Th>Command</Th>
+                                <Th>Enabled</Th>
+                            </Tr>
+                        </Thead>
+                        <Tbody>
+                            {categories.map((category, idx) => (
+                                <>
+                                    <Text fontSize='3xl'>{category.name}</Text>
+                                    {category.commands.map((command, commandIdx) => (
+                                        <Tr key={commandIdx}>
+                                            <Td>{command.name}</Td>
+                                            <Td>
+                                                <Controller initialState={command.online} />
+                                            </Td>
+                                        </Tr>
+                                    ))}
+                                </>
+                            ))}
+                        </Tbody>
+                    </Table>
+                </>
             } {!session && <>
                 <h1>Seems like you&apos;re not logged in. Log in to get started!</h1>
             </>
