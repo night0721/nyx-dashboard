@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react"
 
 import React from 'react'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -49,7 +49,7 @@ function StatCard() {
                 <StatLabel>Activity</StatLabel>
                 <StatNumber>45 messages</StatNumber>
                 <StatHelpText>
-                    <StatArrow type="decrease" />
+                    <StatArrow type="decrease"/>
                     9.05%
                 </StatHelpText>
             </MotionStat>
