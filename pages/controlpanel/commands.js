@@ -13,6 +13,7 @@ import {
 import Head from 'next/head'
 import { useSession } from 'next-auth/client'
 import axios from 'axios'
+import { FaBullseye } from 'react-icons/fa';
 
 
 function Controller({ initialState }) {
@@ -27,6 +28,13 @@ function Controller({ initialState }) {
             onChange={() => { setOnline(!online) }}
         />
     )
+}
+
+function processOnline(status) {
+    console.log(status)
+    if (status == 'online') { return true }
+    if (status == 'offline') { return false }
+    if (status == 'maintenance') { return false }
 }
 
 function Commands() {
@@ -70,7 +78,7 @@ function Commands() {
                                         <Tr key={commandIdx}>
                                             <Td>{command.name}</Td>
                                             <Td>
-                                                <Controller initialState={command.online} />
+                                                <Controller initialState={processOnline(command.status)} />
                                             </Td>
                                         </Tr>
                                     ))}
