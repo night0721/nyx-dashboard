@@ -35,10 +35,9 @@ function Commands() {
 
     const [categories, setCategories] = React.useState(
         [
-            { command: 'Help', online: true },
-            { command: 'Help', online: true },
-            { command: 'Help', online: true },
-            { command: 'Help', online: true },
+            { name: 'Help', commands: [
+                {name: 'Help', online: true}
+            ] },
         ]
     )
 
