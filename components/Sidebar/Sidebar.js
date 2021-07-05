@@ -99,7 +99,9 @@ export default function Sidebar({children}) {
                 color="gray.600"
                 aria-label="Main Navigation"
             >
-                <NavItem icon={MdHome}>Home</NavItem>
+                <Link href='/'>
+                    <NavItem icon={MdHome}>Home</NavItem>
+                </Link>
                 <NavItem icon={HiCode} onClick={integrations.onToggle}>
                     Control Panel
                     <Icon
