@@ -32,7 +32,7 @@ const Hero = () => {
                         display={{ base: "block", lg: "inline" }}
                         w="full"
                         bgClip="text"
-                        bgGradient="linear(to-r, green.400,purple.500)"
+                        bgGradient="linear(to-r, rgba(0,76,213,1) 0%, rgba(0,99,255,1) 50%, rgba(0,183,255,1) 100%)"
                         fontWeight="extrabold"
                     >
                         CODM
