@@ -20,7 +20,10 @@ import { AiFillGift } from "react-icons/ai";
 import { FiMenu, FiSearch } from "react-icons/fi";
 import { HiCode } from "react-icons/hi";
 import { MdKeyboardArrowRight, MdHome } from "react-icons/md";
+import AuthButton from '../AuthButton'
+import Link from 'next/link'
 import React from "react";
+import {session} from 'next-auth/client'
 
 export default function Sidebar({children}) {
     const sidebar = useDisclosure();
@@ -77,16 +80,18 @@ export default function Sidebar({children}) {
             w="60"
             {...props}
         >
-            <Flex px="4" py="5" align="center">
-                <Text
-                    fontSize="2xl"
-                    ml="2"
-                    color={useColorModeValue("brand.500", "white")}
-                    fontWeight="semibold"
-                >
-                    Cath.exe
-                </Text>
-            </Flex>
+            <Link href='/'>
+                <Flex px="4" py="5" align="center">
+                    <Text
+                        fontSize="2xl"
+                        ml="2"
+                        color={useColorModeValue("brand.500", "white")}
+                        fontWeight="semibold"
+                    >
+                        Cath.exe
+                    </Text>
+                </Flex>
+            </Link>
             <Flex
                 direction="column"
                 as="nav"
@@ -104,14 +109,19 @@ export default function Sidebar({children}) {
                     />
                 </NavItem>
                 <Collapse in={integrations.isOpen}>
-                    <NavItem pl="12" py="2">
-                        Main
-                    </NavItem>
-                    <NavItem pl="12" py="2">
-                        Commands
-                    </NavItem>
+                    <Link href='/controlpanel'>
+                        <NavItem pl="12" py="2">
+                            Main
+                        </NavItem>
+                    </Link>
+                    <Link href='controlpanel/commands'>
+                        <NavItem pl="12" py="2">
+                            Commands
+                        </NavItem>
+                    </Link>
                 </Collapse>
                 <NavItem icon={AiFillGift}>Coming Soon</NavItem>
+                <AuthButton/>
             </Flex>
         </Box>
     );
@@ -151,10 +161,8 @@ export default function Sidebar({children}) {
                         icon={<FiMenu />}
                         size="sm"
                     />
-                    <InputGroup w="96" display={{ base: "none", md: "flex" }}>
-                        <InputLeftElement color="gray.500" children={<FiSearch />} />
-                        <Input placeholder="Search for articles..." />
-                    </InputGroup>
+                    <Flex w="96">
+                    </Flex>
 
                     <Flex align="center">
                         <Icon color="gray.500" as={FaBell} cursor="pointer" />
@@ -162,7 +170,7 @@ export default function Sidebar({children}) {
                             ml="4"
                             size="sm"
                             name="anubra266"
-                            src="https://avatars.githubusercontent.com/u/30869823?v=4"
+                            src=''
                             cursor="pointer"
                         />
                     </Flex>

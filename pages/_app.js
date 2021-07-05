@@ -19,10 +19,17 @@ function MyApp({ Component, pageProps }) {
           <link rel="icon" href="/logo.png" type="image/png" />
         </Head>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        <Header/>
-        <div className='page-container'>
-          <Component {...pageProps} />
-        </div>
+        {!session && <Sidebar>
+          <div className='page-container'>
+            <Component {...pageProps} />
+          </div>
+        </Sidebar>}
+        {session && <>
+          <Header/>
+          <div className='page-container'>
+            <Component {...pageProps} />
+          </div>
+        </>}
       </ChakraProvider>
     </Provider>
   )

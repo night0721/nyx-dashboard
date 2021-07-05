@@ -49,6 +49,8 @@ export default function Home() {
           <Card title='commands' desc='lorem ipsum dolor sit amet' link='/controlpanel/commands'/>
           <StatCard/>
         </motion.div>
+        <AuthButton/>
+        {JSON.stringify(session.user)}
       </>
       }
     </>
