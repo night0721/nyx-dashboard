@@ -161,7 +161,7 @@ export default function GridBlurredBackdrop() {
                 mt={16}
                 mx={'auto'}>
                 {testimonials.map((cardInfo, index) => (
-                    <TestmonialCard {...cardInfo} index={index} />
+                    <TestmonialCard {...cardInfo} key={index} />
                 ))}
             </SimpleGrid>
         </Flex>
