@@ -53,7 +53,7 @@ export default function Sidebar({children}) {
                         mr="2"
                         boxSize="4"
                         _groupHover={{
-                            color: useColorModeValue("gray.600", "gray.300"),
+                            color: 'gray.600',
                         }}
                         as={icon}
                     />
