@@ -1,104 +1,103 @@
-import React from "react"
-import Link from 'next/link'
-import PropTypes from "prop-types"
+import React from "react";
 import {
+    chakra,
     Box,
+    useColorModeValue,
     Button,
-    Flex,
-    Image,
-    Heading,
     Stack,
+    Image,
     Text,
-} from "@chakra-ui/react"
-import AuthButton from '../AuthButton'
-import { signIn } from "next-auth/client"
+    Icon,
+} from "@chakra-ui/react";
+import { signIn } from 'next-auth/client'
 
-export default function Hero({
-    title,
-    subtitle,
-    image,
-    ctaLink,
-    ctaText,
-    ...rest
-}) {
+const Hero = () => {
     return (
-        <Flex
-            align="center"
-            justify={{ base: "center", md: "space-around", xl: "space-between" }}
-            direction={{ base: "column-reverse", md: "row" }}
-            wrap="no-wrap"
-            minH="70vh"
-            px={8}
-            mb={16}
-            {...rest}
-        >
-            <Stack
-                spacing={4}
-                w={{ base: "80%", md: "40%" }}
-                align={["center", "center", "flex-start", "flex-start"]}
+        <Box px={8} py={24} mx="auto">
+            <Box
+                w={{ base: "full", md: 11 / 12, xl: 9 / 12 }}
+                mx="auto"
+                textAlign={{ base: "left", md: "center" }}
             >
-                <Heading
-                    as="h1"
-                    size="xl"
+                <chakra.h1
+                    mb={6}
+                    fontSize={{ base: "4xl", md: "6xl" }}
                     fontWeight="bold"
-                    color="primary.800"
-                    textAlign={["center", "center", "left", "left"]}
+                    lineHeight="none"
+                    letterSpacing={{ base: "normal", md: "tight" }}
+                    color={useColorModeValue("gray.900", 'gray.100')}
                 >
-                    {title}
-                </Heading>
-                <Heading
-                    as="h2"
-                    size="md"
-                    color="primary.800"
-                    opacity="0.8"
-                    fontWeight="normal"
-                    lineHeight={1.5}
-                    textAlign={["center", "center", "left", "left"]}
-                >
-                    {subtitle}
-                </Heading>
-                <Link href={ctaLink}>
-                    <Button
-                        backgroundColor='teal'
-                        borderRadius="8px"
-                        py="4"
-                        px="4"
-                        lineHeight="1"
-                        size="md"
+                    Your favorite{" "}
+                    <Text
+                        display={{ base: "block", lg: "inline" }}
+                        w="full"
+                        bgClip="text"
+                        bgGradient="linear(to-r, green.400,purple.500)"
+                        fontWeight="extrabold"
                     >
-                        {ctaText}
-                    </Button>
-                </Link>
-                <Text
-                    fontSize="xs"
-                    mt={2}
-                    textAlign="center"
-                    color="primary.800"
-                    opacity="0.6"
+                        CODM
+                    </Text>{" "}
+                    bot.
+                </chakra.h1>
+                <chakra.p
+                    px={{ base: 0, lg: 24 }}
+                    mb={6}
+                    fontSize={{ base: "lg", md: "xl" }}
+                    color={useColorModeValue("gray.600", 'gray.300')}
                 >
-                    No credit card required.
-                </Text>
-            </Stack>
-            <Box w={{ base: "80%", sm: "60%", md: "50%" }} mb={{ base: 12, md: 0 }}>
-                <Image src={image} size="100%" rounded="1rem" shadow="2xl" />
+                    Your favorite CODM bot. Cath.exe is packed to the brim with commands for moderation, stats and of course, CODM.
+                </chakra.p>
+                <Stack
+                    direction={{ base: "column", sm: "row" }}
+                    mb={{ base: 4, md: 8 }}
+                    spacing={2}
+                    justifyContent={{ sm: "left", md: "center" }}
+                >
+                    <Button
+                        as="a"
+                        variant="solid"
+                        colorScheme="blue"
+                        display="inline-flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        w={{ base: "full", sm: "auto" }}
+                        mb={{ base: 2, sm: 0 }}
+                        href={"https://discord.com/api/oauth2/authorize?client_id=800966959268364288&permissions=4231314550&scope=bot%20applications.commands"}
+                        size="lg"
+                    >
+                        Invite Cath
+                        <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
+                            <path
+                                fillRule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clipRule="evenodd"
+                            />
+                        </Icon>
+                    </Button>
+                    <Button
+                        as="a"
+                        colorScheme="gray"
+                        display="inline-flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        w={{ base: "full", sm: "auto" }}
+                        mb={{ base: 2, sm: 0 }}
+                        onClick={() => { signIn() }}
+                        size="lg"
+                    >
+                        Sign Up
+                        <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
+                            <path
+                                fillRule="evenodd"
+                                d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                                clipRule="evenodd"
+                            />
+                        </Icon>
+                    </Button>
+                </Stack>
             </Box>
-        </Flex>
-    )
-}
+        </Box>
+    );
+};
 
-Hero.propTypes = {
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    image: PropTypes.string,
-    ctaText: PropTypes.string,
-    ctaLink: PropTypes.string,
-}
-
-Hero.defaultProps = {
-    title: "Hero",
-    subtitle:
-        "This is the subheader section where you describe the basic benefits of your product",
-    image: "https://source.unsplash.com/collection/404339/800x600",
-    ctaText: "Create your account now",
-    ctaLink: "",
-}
+export default Hero;

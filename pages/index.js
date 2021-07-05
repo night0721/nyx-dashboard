@@ -7,6 +7,8 @@ import { Features } from '../components/Features/Features'
 import { Footer } from '../components/Footer/Footer'
 import { motion } from 'framer-motion'
 import StatCard from '../components/StatCard'
+import Testimonials from '../components/Testimonials/Testimonials'
+import AuthButton from '../components/AuthButton'
 
 export default function Home() {
 
@@ -29,8 +31,9 @@ export default function Home() {
 
     <>
       {!session && <>
-        <Hero title='Cath.exe' subtitle='Your favorite CODM bot. Cath.exe is packed to the brim with commands for moderation, stats and of course, CODM.' ctaText='Add Cath to your server' image='/logo.png' ctaLink={"https://discord.com/api/oauth2/authorize?client_id=800966959268364288&permissions=4231314550&scope=bot%20applications.commands"}/>
+        <Hero/>
         <Features />
+        <Testimonials/>
         <CTA />
         <Footer />
       </>
