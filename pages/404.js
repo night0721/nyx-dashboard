@@ -1,12 +1,12 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function Custom404() {
-    return (
+  return (
     <>
-        <Head>
-            <title>404</title>
-        </Head>
-        <h1>404 - Page Not Found</h1>
+      <Head>
+        <title>404</title>
+      </Head>
+      <h1>404 - Page Not Found</h1>
     </>
-    )
+  );
 }
