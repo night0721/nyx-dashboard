@@ -33,15 +33,9 @@ function Controller({ initialState }) {
 
 function processOnline(status) {
   console.log(status);
-  if (status == "online") {
-    return true;
-  }
-  if (status == "offline") {
-    return false;
-  }
-  if (status == "maintenance") {
-    return false;
-  }
+  if (status == "online") return true;
+  if (status == "offline") return false;
+  if (status == "maintenance") return false;
 }
 
 function Commands() {

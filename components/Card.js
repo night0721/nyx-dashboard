@@ -2,9 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Text, Flex, Button } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-
 const MotionFlex = motion(Flex);
-
 const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -12,8 +10,7 @@ const item = {
     opacity: 1,
   },
 };
-
-function Card({ title, desc, link }) {
+export default function Card({ title, desc, link }) {
   return (
     <Link href={link}>
       <MotionFlex
@@ -36,5 +33,3 @@ function Card({ title, desc, link }) {
     </Link>
   );
 }
-
-export default Card;

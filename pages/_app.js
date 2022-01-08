@@ -7,7 +7,7 @@ import theme from "../chakra_config/theme";
 import { ColorModeScript } from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar/Sidebar";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   const [session, loading] = useSession();
 
   return (
@@ -37,5 +37,3 @@ function MyApp({ Component, pageProps }) {
     </Provider>
   );
 }
-
-export default MyApp;
