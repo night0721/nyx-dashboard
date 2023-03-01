@@ -5,19 +5,17 @@ async function decodeData(buffer) {
   const parsedNbt = await parseNbt(Buffer.from(buffer, "base64"));
   return nbt.simplify(parsedNbt);
 }
-
+let dat;
 export default async function handler(req, res) {
   if (req.method == "GET") {
     try {
-      const {ByteData} = JSON.parse(req.body);
-      if (ByteData == undefined)
-        res.status(400).json({error: "ByteData is undefined"});
+      dat = JSON.parse(req.body).ByteData;
     } catch (e) {
-      const {ByteData} = req.body;
-      if (ByteData == undefined)
-        res.status(400).json({error: "ByteData is undefined"});
+      dat = req.body.ByteData;
     }
-    const data = await getItemNetworth((await decodeData(ByteData)).i[0], {
+    if (dat == undefined)
+      res.status(400).json({error: "ByteData is undefined"});
+    const data = await getItemNetworth((await decodeData(dat)).i[0], {
       cache: true,
     });
     res.status(200).json(data);
