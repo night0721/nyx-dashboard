@@ -8,9 +8,15 @@ async function decodeData(buffer) {
 
 export default async function handler(req, res) {
   if (req.method == "GET") {
-    const {ByteData} = JSON.parse(req.body);
-    if (ByteData == undefined)
-      res.status(400).json({error: "ByteData is undefined"});
+    try {
+      const {ByteData} = JSON.parse(req.body);
+      if (ByteData == undefined)
+        res.status(400).json({error: "ByteData is undefined"});
+    } catch (e) {
+      const {ByteData} = req.body;
+      if (ByteData == undefined)
+        res.status(400).json({error: "ByteData is undefined"});
+    }
     const data = await getItemNetworth((await decodeData(ByteData)).i[0], {
       cache: true,
     });
