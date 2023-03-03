@@ -7,12 +7,13 @@ async function decodeData(buffer) {
 }
 let dat;
 export default async function handler(req, res) {
-  if (req.method == "GET") {
+  if (req.method == "POST" || req.method == "GET" || req.method == "PUT") {
     try {
       dat = JSON.parse(req.body).ByteData;
     } catch (e) {
       dat = req.body.ByteData;
     }
+    console.log(dat);
     if (dat == undefined)
       res.status(400).json({error: "ByteData is undefined"});
     const data = await getItemNetworth((await decodeData(dat)).i[0], {
