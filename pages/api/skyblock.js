@@ -12,8 +12,7 @@ export default async function handler(req, res) {
       return;
     }
     console.log(req.body);
-    let dat;
-    dat = req.body;
+    let dat = req.body;
     if (typeof dat !== "string" || typeof dat == "undefined") {
       res.status(400).json({error: "ByteData is not a string or undefined"});
       return;
