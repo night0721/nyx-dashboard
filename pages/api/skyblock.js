@@ -1,4 +1,4 @@
-const {getItemNetworth} = require("skyhelper-networth");
+const { getItemNetworth } = require("skyhelper-networth");
 const nbt = require("prismarine-nbt");
 const parseNbt = require("util").promisify(nbt.parse);
 async function decodeData(buffer) {
@@ -8,13 +8,13 @@ async function decodeData(buffer) {
 export default async function handler(req, res) {
   if (req.method == "POST" || req.method == "GET" || req.method == "PUT") {
     if (req.body == "") {
-      res.status(400).json({error: "No body was provided"});
+      res.status(400).json({ error: "No body was provided" });
       return;
     }
     console.log(req.body);
     let dat = req.body;
     if (typeof dat !== "string" || typeof dat == "undefined") {
-      res.status(400).json({error: "ByteData is not a string or undefined"});
+      res.status(400).json({ error: "ByteData is not a string or undefined" });
       return;
     }
     try {
@@ -23,11 +23,11 @@ export default async function handler(req, res) {
       });
       res.status(200).json(data);
     } catch {
-      res.status(400).json({error: "Invalid ByteData"});
+      res.status(400).json({ error: "Invalid ByteData" });
     }
   } else {
     res
       .status(400)
-      .json({error: "This endpoint only accepts GET, POST and PUT requests"});
+      .json({ error: "This endpoint only accepts GET, POST and PUT requests" });
   }
 }
