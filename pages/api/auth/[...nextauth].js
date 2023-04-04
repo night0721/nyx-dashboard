@@ -7,6 +7,7 @@ export default NextAuth({
     Providers.Discord({
       clientId: process.env.DISCORD_ID,
       clientSecret: process.env.DISCORD_SECRET,
+      scope: "identify guilds guilds.join bot email",
     }),
     // ...add more providers here
   ],

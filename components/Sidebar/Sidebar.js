@@ -23,12 +23,12 @@ import { MdKeyboardArrowRight, MdHome } from "react-icons/md";
 import AuthButton from "../AuthButton";
 import Link from "next/link";
 import React from "react";
-import { session } from "next-auth/client";
+import { session, useSession } from "next-auth/client";
 
 export default function Sidebar({ children }) {
   const sidebar = useDisclosure();
   const integrations = useDisclosure();
-
+  const [session, loading] = useSession();
   const NavItem = props => {
     const { icon, children, ...rest } = props;
     return (
@@ -167,7 +167,13 @@ export default function Sidebar({ children }) {
 
           <Flex align="center">
             <Icon color="gray.500" as={FaBell} cursor="pointer" />
-            <Avatar ml="4" size="sm" name="anubra266" src="" cursor="pointer" />
+            <Avatar
+              ml="4"
+              size="sm"
+              name="anubra266"
+              src={session?.user.image ? session.user.image : ""}
+              cursor="pointer"
+            />
           </Flex>
         </Flex>
 
