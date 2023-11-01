@@ -1,42 +1,22 @@
 # NYX Dashboard
 
 This project is dashboard for its parent project, [NYX](https://github.com/night0721/cath.exe)
-# Featuers
+
+# Features
 
 - Login
 - Control Panel
 
-
 ## Run Locally
 
-Clone the project
-
 ```bash
-  git clone https://github.com/night0721/nyx-dashboard.git
+  git clone https://github.com/night0721/nyx-dashboard.git # clone repository
+  cd nyx-dashboard # go to project directory
+  npm install # install dependencies
 ```
+Then edit environment variables at .env.example, also change filename to .env
 
-Go to the project directory
-
-```bash
-  cd nyx-dashboard
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Configure environment variables
-
-.env example
-```
-  DISCORD_ID=
-  DISCORD_SECRET=
-  DATABASE_URL=
-```
-
-Start the server
+Last, start the server
 
 ```bash
   npm run dev
@@ -44,7 +24,8 @@ Start the server
 
 ## License
 
-This project licensed under the GNU Public LICENSE v3.0. See [LICENSE](https://github.com/night0721/nyx-dashboard) for more information.
+This project licensed under the GNU Public License v3.0. See [LICENSE](https://github.com/night0721/nyx-dashboard) for more information.
+
 ## Authors
 
 - [@chunchunmaru](https://www.github.com/https://github.com/chunchunmaru)
