@@ -1,12 +1,10 @@
+# NYX Dashboard
 
-# Cath.gq
+This project is dashboard for its parent project, [NYX](https://github.com/night0721/cath.exe)
+# Featuers
 
-Cath.gq is the dashboard for its parent project, [Cath.exe](https://github.com/night0721/cath.exe)
-
-
-## Bugs And Feature Requests
-
-If there is a bug you would wish to report, open a new **issue** and label it as **bug**; these will be high priority changes! If there is a feature you would like to see implemented, open a new **issue** and mark it as an **enhancement**; we'll make sure to get to these!
+- Login
+- Control Panel
 
 
 ## Run Locally
@@ -14,19 +12,19 @@ If there is a bug you would wish to report, open a new **issue** and label it as
 Clone the project
 
 ```bash
-  git clone https://github.com/night0721/cath.gq.git
+  git clone https://github.com/night0721/nyx-dashboard.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd cath.gq
+  cd nyx-dashboard
 ```
 
 Install dependencies
 
 ```bash
-  yarn install
+  npm install
 ```
 
 Configure environment variables
@@ -44,19 +42,13 @@ Start the server
   npm run dev
 ```
 
-  
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
-
-  
-## Demo
-
-[Live](https://cath.gq)
-
-  
+This project licensed under the GNU Public LICENSE v3.0. See [LICENSE](https://github.com/night0721/nyx-dashboard) for more information.
 ## Authors
 
-- [@qt-coder](https://www.github.com/qt-coder)
+- [@chunchunmaru](https://www.github.com/https://github.com/chunchunmaru)
 
-  
+## Bugs And Feature Requests
+
+If there is a bug you would wish to report, open a new **issue** and label it as **bug**; these will be high priority changes! If there is a feature you would like to see implemented, open a new **issue** and mark it as an **enhancement**; we'll make sure to get to these!
