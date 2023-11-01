@@ -2,7 +2,7 @@
 
 This project is dashboard for its parent project, [NYX](https://github.com/night0721/cath.exe)
 
-# Features
+## Features
 
 - Login
 - Control Panel
